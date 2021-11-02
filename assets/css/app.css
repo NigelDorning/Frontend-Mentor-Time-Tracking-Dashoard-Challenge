@@ -14,11 +14,21 @@ body {
 
 .time-tracker {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
   max-width: 375px;
   margin: auto;
 }
 
+@media screen and (min-width: 700px) {
+  .time-tracker {
+    max-width: 1440px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .profile-card {
+    grid-row: 1/3;
+  }
+}
 .activity-card__inner, .activity-card, .profile-card {
   border-radius: 1rem;
   padding-top: 3rem;
@@ -135,6 +145,29 @@ body {
   clear: both;
   color: #6f76c8;
   font-size: 0.9rem;
+}
+
+@media screen and (min-width: 700px) {
+  .profile-card header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .profile-card header img {
+    margin-bottom: 1.5rem;
+    margin-right: 0;
+  }
+  .profile-card header h2 {
+    font-weight: 300;
+    font-size: 1.25rem;
+  }
+  .profile-card header h3 {
+    font-weight: 400;
+    font-size: 2rem;
+  }
+  .profile-card footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

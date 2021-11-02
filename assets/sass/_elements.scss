@@ -134,3 +134,32 @@
         font-size: .9rem;
     }
 }
+
+@media screen and (min-width: 700px) {
+    .profile-card {
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+
+            img {
+                margin-bottom: 1.5rem;
+                margin-right: 0;
+            }
+
+            h2 {
+                font-weight: 300;
+                font-size: 1.25rem;
+            }
+    
+            h3 {
+                font-weight: 400;
+                font-size: 2rem;
+            }
+        }
+    
+        footer {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}

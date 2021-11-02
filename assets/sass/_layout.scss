@@ -1,6 +1,17 @@
 .time-tracker {
     display: grid;
-    gap: 1rem;
+    gap: 1.5rem;
     max-width: 375px;
     margin: auto;
+}
+
+@media screen and (min-width: 700px) {
+    .time-tracker {
+        max-width: 1440px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .profile-card {
+        grid-row: 1 / 3;
+    }
 }
