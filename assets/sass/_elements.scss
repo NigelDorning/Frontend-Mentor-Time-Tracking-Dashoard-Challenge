@@ -20,7 +20,7 @@
         display: flex;
         align-items: center;
         border-radius: 1rem;
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
     header {
@@ -102,7 +102,35 @@
 
     &__inner {
         @extend %card-basis;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         background: $dark-blue;
-        padding: 1rem;
+        padding: 1.5rem;
+        line-height: 1.5;
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+
+    &__time {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+
+    &__action {
+        background: transparent;
+        border: 0;
+        float: right;
+        margin-bottom: 1.25rem;
+    }
+
+    &__previous {
+        display: block;
+        clear: both;
+        color: $desaturated-blue;
+        font-size: .9rem;
     }
 }

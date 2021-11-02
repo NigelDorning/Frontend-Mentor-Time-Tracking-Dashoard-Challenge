@@ -34,7 +34,7 @@ body {
   display: flex;
   align-items: center;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 .profile-card header {
   background: #5847eb;
@@ -109,8 +109,32 @@ body {
   background-position: 92.5% -7.5%;
 }
 .activity-card__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: #1c1f4a;
-  padding: 1rem;
+  padding: 1.5rem;
+  line-height: 1.5;
+}
+.activity-card__title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.activity-card__time {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.activity-card__action {
+  background: transparent;
+  border: 0;
+  float: right;
+  margin-bottom: 1.25rem;
+}
+.activity-card__previous {
+  display: block;
+  clear: both;
+  color: #6f76c8;
+  font-size: 0.9rem;
 }
 
 /*# sourceMappingURL=app.css.map */
