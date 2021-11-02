@@ -1,0 +1,108 @@
+@mixin imageBackground ($image) {
+    background-image: url($image);
+    background-repeat: no-repeat;
+    background-position: 92.5% -7.5%;
+}
+
+%card-basis {
+    border-radius: 1rem;
+    padding-top: 3rem;
+    color: white;
+}
+
+.profile-card {
+    @extend %card-basis;
+    background-color: $dark-blue;
+    padding-top: 0;
+
+    header,
+    footer {
+        display: flex;
+        align-items: center;
+        border-radius: 1rem;
+        padding: 1rem;
+    }
+
+    header {
+        background: $blue;
+        line-height: 1.5;
+        
+        img {
+            width: 5rem;
+            border-radius: 100%;
+            border: 4px white solid;
+            margin-right: 1rem;
+        }
+
+        h2 {
+            font-weight: 300;
+            font-size: 1rem;
+        }
+
+        h3 {
+            font-weight: 400;
+            font-size: 1.5rem;
+        }
+    }
+
+    footer {
+        background: $dark-blue;
+        align-items: center;
+        justify-content: space-around;
+
+        button {
+            background: transparent;
+            border: 0;
+            padding: .5rem;
+            font-size: 1rem;
+            font-weight: 300;
+            color: $desaturated-blue;
+
+            &:hover,
+            &.active {
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.activity-card {
+    @extend %card-basis;
+
+    &--work {
+        background: $light-red-work;
+        @include imageBackground('../images/icon-work.svg');
+    }
+
+    &--play {
+        background: $soft-blue;
+        @include imageBackground('../images/icon-play.svg');
+    }
+
+    &--study {
+        background: $light-red-study;
+        @include imageBackground('../images/icon-study.svg');
+    }
+
+    &--exercise {
+        background: $lime-green;
+        @include imageBackground('../images/icon-exercise.svg');
+    }
+
+    &--social {
+        background: $violet;
+        @include imageBackground('../images/icon-social.svg');
+    }
+
+    &--self-care {
+        background: $soft-orange;
+        @include imageBackground('../images/icon-self-care.svg');
+    }
+
+    &__inner {
+        @extend %card-basis;
+        background: $dark-blue;
+        padding: 1rem;
+    }
+}
