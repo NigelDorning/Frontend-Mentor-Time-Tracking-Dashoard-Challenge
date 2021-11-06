@@ -5,6 +5,7 @@
 }
 
 %card-basis {
+    position: relative;
     border-radius: 1rem;
     padding-top: 3rem;
     color: white;
@@ -25,7 +26,6 @@
 
     header {
         background: $blue;
-        line-height: 1.5;
         
         img {
             width: 5rem;
@@ -36,7 +36,7 @@
 
         h2 {
             font-weight: 300;
-            font-size: 1rem;
+            font-size: .8rem;
         }
 
         h3 {
@@ -102,12 +102,19 @@
 
     &__inner {
         @extend %card-basis;
+        background: $dark-blue;
+        padding: 1.5rem;
+    }
+
+    .top-row,
+    .bottom-row {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: $dark-blue;
-        padding: 1.5rem;
-        line-height: 1.5;
+    }
+
+    .top-row {
+        margin-bottom: 1.5rem;
     }
 
     &__title {
@@ -123,8 +130,6 @@
     &__action {
         background: transparent;
         border: 0;
-        float: right;
-        margin-bottom: 1.25rem;
     }
 
     &__previous {
@@ -135,31 +140,58 @@
     }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1000px) {
     .profile-card {
         header {
             flex-direction: column;
             align-items: flex-start;
+            padding-top: 3rem;
 
             img {
-                margin-bottom: 1.5rem;
+                margin-bottom: 2rem;
                 margin-right: 0;
             }
 
             h2 {
                 font-weight: 300;
-                font-size: 1.25rem;
+                font-size: .9rem;
             }
     
             h3 {
-                font-weight: 400;
-                font-size: 2rem;
+                font-weight: 300;
+                font-size: 3rem;
+                margin-bottom: 3rem;
             }
         }
     
         footer {
             flex-direction: column;
             align-items: flex-start;
+        }
+    }
+
+    .activity-card {
+
+        &__inner {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+
+            h3 {
+                font-size: 3rem;
+            }
+        }
+
+        .bottom-row {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &__previous {
+            margin-top: 1rem;
         }
     }
 }

@@ -6,6 +6,9 @@
 
 html,
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   background: #0f1424;
@@ -19,17 +22,31 @@ body {
   margin: auto;
 }
 
-@media screen and (min-width: 700px) {
+.activities {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 1000px) {
   .time-tracker {
     max-width: 1440px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 3fr;
+    gap: 3rem;
   }
 
   .profile-card {
     grid-row: 1/3;
   }
+
+  .activities {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: 2/5;
+    grid-row: 1/3;
+    gap: 3rem;
+  }
 }
 .activity-card__inner, .activity-card, .profile-card {
+  position: relative;
   border-radius: 1rem;
   padding-top: 3rem;
   color: white;
@@ -48,7 +65,6 @@ body {
 }
 .profile-card header {
   background: #5847eb;
-  line-height: 1.5;
 }
 .profile-card header img {
   width: 5rem;
@@ -58,7 +74,7 @@ body {
 }
 .profile-card header h2 {
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 .profile-card header h3 {
   font-weight: 400;
@@ -119,12 +135,17 @@ body {
   background-position: 92.5% -7.5%;
 }
 .activity-card__inner {
+  background: #1c1f4a;
+  padding: 1.5rem;
+}
+.activity-card .top-row,
+.activity-card .bottom-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1c1f4a;
-  padding: 1.5rem;
-  line-height: 1.5;
+}
+.activity-card .top-row {
+  margin-bottom: 1.5rem;
 }
 .activity-card__title {
   font-size: 1.25rem;
@@ -137,8 +158,6 @@ body {
 .activity-card__action {
   background: transparent;
   border: 0;
-  float: right;
-  margin-bottom: 1.25rem;
 }
 .activity-card__previous {
   display: block;
@@ -147,26 +166,47 @@ body {
   font-size: 0.9rem;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1000px) {
   .profile-card header {
     flex-direction: column;
     align-items: flex-start;
+    padding-top: 3rem;
   }
   .profile-card header img {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     margin-right: 0;
   }
   .profile-card header h2 {
     font-weight: 300;
-    font-size: 1.25rem;
+    font-size: 0.9rem;
   }
   .profile-card header h3 {
-    font-weight: 400;
-    font-size: 2rem;
+    font-weight: 300;
+    font-size: 3rem;
+    margin-bottom: 3rem;
   }
   .profile-card footer {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .activity-card__inner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+  }
+  .activity-card__inner h3 {
+    font-size: 3rem;
+  }
+  .activity-card .bottom-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .activity-card__previous {
+    margin-top: 1rem;
   }
 }
 
